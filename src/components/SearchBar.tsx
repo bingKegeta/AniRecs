@@ -4,13 +4,11 @@ import '../styles/SearchBar.css';
 const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [isExpanded, setIsExpanded] = useState(false);
-  const [isSearched, setIsSearched] = useState(false);
 
   const handleSearch = () => {
     if (searchTerm.trim() !== '') {
         console.log(searchTerm, "searched");
     }
-    setIsSearched(true);
     // TODO: Display the cards here or somewhere else not sure
   };
 
@@ -31,7 +29,7 @@ const SearchBar = () => {
 
   return (
     <div className='full-bar'>
-        <div className={`search-bar ${isExpanded ? 'expanded' : isSearched ? 'searched' : ''}`}>
+        <div className={`search-bar ${isExpanded ? 'expanded' : ''}`}>
             <div className="search-input" onFocus={onFocus} onBlur={onBlur}>
                 <input
                     type="text"
