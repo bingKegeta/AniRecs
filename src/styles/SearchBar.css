@@ -1,6 +1,6 @@
 /* Styling for the SearchBar */
 .full-bar {
-    height: 100svh;
+    height: auto;
     max-width: 100%;
     display: grid;
   }
@@ -9,7 +9,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: auto;
     width: 40%; /* Initial width */
     transition: all 0.3s;
     margin: 0 auto; /* Center horizontally */
