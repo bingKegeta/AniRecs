@@ -1,13 +1,19 @@
 import React, { useState } from 'react';
 import '../styles/SearchBar.css';
 
-const SearchBar = () => {
+interface SearchBarProps {
+  text: string,
+  onSearch: (query: string) => void
+}
+
+const SearchBar = ({text, onSearch}: SearchBarProps) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [isExpanded, setIsExpanded] = useState(false);
 
   const handleSearch = () => {
     if (searchTerm.trim() !== '') {
         console.log(searchTerm, "searched");
+        onSearch(searchTerm)
     }
     // TODO: Display the cards here or somewhere else not sure
   };
@@ -33,7 +39,7 @@ const SearchBar = () => {
             <div className="search-input" onFocus={onFocus} onBlur={onBlur}>
                 <input
                     type="text"
-                    placeholder="Search..."
+                    placeholder={text}
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                     onKeyDown={handleKeyPress}
