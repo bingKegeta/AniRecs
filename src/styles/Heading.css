@@ -2,24 +2,39 @@
 
 .title-container {
     display: inline-block;
+}
+
+.heading-text {
+  display: inline;
+  font-family: "Helvetica Neue", sans-serif;
+  text-align: right;
+  color: #333; /* Text color */
+  font-size: 36px; /* Adjust the font size as needed */
+  text-transform: uppercase; /* Uppercase text */
+  letter-spacing: 2px; /* Letter spacing */
+}
+
+.heading-text::after {
+  content: "";
+  display: block;
+  width: 100px; /* Adjust the line width */
+  height: 3px; /* Line thickness */
+  background-color: #007BFF; /* Line color */
+  margin: 15px auto;
+}
+
+.blinking-caret {
+  font-size: 1rem; /* Adjust font size as needed */
+  animation: blink 0.7s infinite;
+  vertical-align: middle;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
   }
-  
-  .heading-text {
-    display: inline;
+  50% {
+    opacity: 0;
   }
-  
-  .blinking-caret {
-    font-size: 1rem; /* Adjust font size as needed */
-    animation: blink 0.7s infinite;
-    vertical-align: middle;
-  }
-  
-  @keyframes blink {
-    0%, 100% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0;
-    }
-  }
+}
   
